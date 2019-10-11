@@ -1,2 +1,2 @@
 # ImageBuildingStuff
-Entaelt assets und config-files um eine Virtualbox-Vagrant-Box zu bauen
+Enthaelt assets und config-files um eine Virtualbox-Vagrant-Box zu bauen
