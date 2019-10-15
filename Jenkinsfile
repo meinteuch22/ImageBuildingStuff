@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1'){
+        stage('Build Image'){
             steps {
-                echo 'Hello World!'
+                sh "packer build Packerfile.json"
             }
         }        
         
