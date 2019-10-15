@@ -2,7 +2,7 @@
   "builders": [
     {
       "communicator": "ssh",
-      "source_path": "generic/alpine310",
+      "source_path": "geerlingguy/centos7",
       "provider": "virtualbox",
       "add_force": true,
       "type": "vagrant"
