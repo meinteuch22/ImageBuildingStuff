@@ -5,12 +5,18 @@ pipeline {
             steps {
                 sh "packer build Packerfile.json"
             }
-        }        
+        }
+        stage('Image Archivation'){
+            steps {
+                archiveArtifacts artifacts: 'output-vagrant/*.box', onlyIfSuccessful: true                
+            }
+        }
+        
         
     }
     post {
         success {
-             echo 'Image and dir should be removed from Workspace'   
+             echo 'Mail this: a new image has been built.'   
         }    
     }
 }
