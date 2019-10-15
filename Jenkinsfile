@@ -8,4 +8,9 @@ pipeline {
         }        
         
     }
+    post {
+        success {
+             echo 'Image and dir should be removed from Workspace'   
+        }    
+    }
 }
