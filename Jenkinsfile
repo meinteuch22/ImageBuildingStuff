@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Create Version File'){
             steps {
-                writeFile file: 'image.json', text: '{"description":"", "name":"" , "versions":""}'
+                writeFile file: 'output-vagrant/image.json', text: '{"description":"", "name":"" , "versions":""}'
             }
         }
         stage('Archive Image'){
             steps {
-                archiveArtifacts artifacts: 'output-vagrant/*.box', onlyIfSuccessful: true                
+                archiveArtifacts artifacts: 'output-vagrant/*', onlyIfSuccessful: true                
             }
         }
         stage('Clean Workspace') {
