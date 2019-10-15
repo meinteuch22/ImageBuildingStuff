@@ -14,9 +14,5 @@ pipeline {
         
         
     }
-    post {
-        success {
-             echo 'Mail this: a new image has been built.'   
-        }    
-    }
+    
 }
