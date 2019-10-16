@@ -12,7 +12,7 @@ pipeline {
             }
             steps {
                 sh "echo ${GIT_COMMIT_HASH}"
-                writeFile file: 'output-vagrant/image.json', text: '''{
+                writeFile file: 'output-vagrant/image.json', text: """{
                     "description":"StratoPro Ordering Vagrant Box",
                     "name":"StratoPro/centos7" ,
                     "versions":[
@@ -31,7 +31,7 @@ pipeline {
                     
                     ]
             
-                }'''
+                }"""
             }
         }
         stage('Archive Image'){
