@@ -9,6 +9,7 @@ pipeline {
         stage('Create Version File'){
             environment {
                 GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
+                CHECKSUM = sh (script: "awk '{print $1}' output-vagrant/checksum.txt", returnStdout: true)
             }
             steps {
                 sh "echo ${GIT_COMMIT_HASH}"
@@ -19,7 +20,7 @@ pipeline {
                         {
                          "providers":[
                              {
-                              "checksum":"",
+                              "checksum":"$CHECKSUM",
                               "checksum_type":"sha256",
                               "name": "virtualbox",
                               "url":"http://vps249917.ovh.net:8080/job/FirstPipeline/lastSuccessfulBuild/artifact/output-vagrant/package.box"    
