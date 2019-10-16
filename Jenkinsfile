@@ -26,7 +26,7 @@ pipeline {
                              }
                          
                          ],
-                         "version": env.GIT_COMMIT_HASH    
+                         "version": "$GIT_COMMIT_HASH"    
                         }
                     
                     ]
