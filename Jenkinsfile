@@ -12,7 +12,26 @@ pipeline {
             }
             steps {
                 sh "echo ${GIT_COMMIT_HASH}"
-                writeFile file: 'output-vagrant/image.json', text: '{"description":"", "name":"" , "versions":""}'
+                writeFile file: 'output-vagrant/image.json', text: '{
+                    "description":"StratoPro Ordering Vagrant Box",
+                    "name":"StratoPro/centos7" ,
+                    "versions":[
+                        {
+                         "providers":[
+                             {
+                              "checksum":"",
+                              "checksum_type":"sha256",
+                              "name": "virtualbox",
+                              "url":"http://vps249917.ovh.net:8080/job/FirstPipeline/lastSuccessfulBuild/artifact/output-vagrant/package.box"    
+                             }
+                         
+                         ],
+                         "version": "${GIT_COMMIT_HASH}"    
+                        }
+                    
+                    ]
+            
+                }'
             }
         }
         stage('Archive Image'){
