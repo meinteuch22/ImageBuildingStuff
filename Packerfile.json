@@ -7,6 +7,13 @@
       "add_force": true,
       "type": "vagrant"
     }
+  ],
+  "post-processors": [
+    {
+     "type": "checksum",
+     "output": "checksum.txt",
+     "checksum_types": ["sha256"] 
+    }
   ]
 }
 
