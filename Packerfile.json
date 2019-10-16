@@ -11,7 +11,7 @@
   "post-processors": [
     {
      "type": "checksum",
-     "output": "checksum.txt",
+     "output": "output-vagrant/checksum.txt",
      "checksum_types": ["sha256"] 
     }
   ]
