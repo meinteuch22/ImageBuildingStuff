@@ -7,8 +7,10 @@ pipeline {
             }
         }
         stage('Create Version File'){
-            steps {
+            environment {
                 GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
+            }
+            steps {
                 sh "echo ${GIT_COMMIT_HASH}"
                 writeFile file: 'output-vagrant/image.json', text: '{"description":"", "name":"" , "versions":""}'
             }
