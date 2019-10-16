@@ -9,7 +9,7 @@ pipeline {
         stage('Create Version File'){
             environment {
                 GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
-                CHECKSUM = sh (script: "awk '{print $1}' output-vagrant/checksum.txt", returnStdout: true)
+                CHECKSUM = sh (script: "awk '{print \$1}' output-vagrant/checksum.txt", returnStdout: true)
             }
             steps {
                 sh "echo ${GIT_COMMIT_HASH}"
