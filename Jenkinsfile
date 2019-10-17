@@ -15,7 +15,7 @@ pipeline {
                 sh "echo ${GIT_COMMIT_HASH}"
                 writeFile file: 'output-vagrant/image.json', text: """{
                     "description":"StratoPro Ordering Vagrant Box",
-                    "name":"StratoPro/centos7" ,
+                    "name":"StratoPro/Centos7" ,
                     "versions":[
                         {
                          "providers":[
@@ -27,7 +27,7 @@ pipeline {
                              }
                          
                          ],
-                         "version": "$GIT_COMMIT_HASH"    
+                         "version": "0.0.1"    
                         }
                     
                     ]
