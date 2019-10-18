@@ -8,6 +8,18 @@
       "type": "vagrant"
     }
   ],
+  "provisioners":[
+       {
+        "type": "shell",
+        "inline": [
+            "sleep 30",
+            "echo 'StratoProVM' > /etc/hostname",
+            "echo 'This Virtual Machine is brought to you by the Church Of Baal the Grand. Enjoy !' > /etc/motd" 
+        ]
+       }
+
+
+  ],
   "post-processors": [
     {
      "type": "checksum",
