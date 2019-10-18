@@ -28,7 +28,7 @@ pipeline {
                              }
                          
                          ],
-                         "version": "7.0.1"    
+                         "version": "$GIT_TAG"    
                         }
                     
                     ]
