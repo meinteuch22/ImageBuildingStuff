@@ -24,7 +24,7 @@ pipeline {
                               "checksum":"$CHECKSUM",
                               "checksum_type":"sha256",
                               "name": "virtualbox",
-                              "url":"http://vps249917.ovh.net:8080/job/FirstPipeline/lastSuccessfulBuild/artifact/output-vagrant/package.box"    
+                              "url":"http://admin:119de05359ae662811d8c7963663f22bbe@vps249917.ovh.net:8080/job/FirstPipeline/lastSuccessfulBuild/artifact/output-vagrant/package.box"    
                              }
                          
                          ],
