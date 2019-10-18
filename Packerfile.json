@@ -19,7 +19,7 @@
         "inline": [
             "sleep 30",
             "echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers", 
-            "echo 'VM-Build-{{user `jenkins_build_nr`' > /etc/hostname",
+            "echo 'VM-Build-{{user `jenkins_build_nr`}}' > /etc/hostname",
             "echo 'This Virtual Machine is brought to you by the Church Of Baal the Grand. Enjoy !' > /etc/motd" 
         ]
        }
