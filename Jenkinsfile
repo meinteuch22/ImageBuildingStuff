@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Image'){
             steps {
-                sh "packer build Packerfile.json"
+                sh "packer build -var 'jenkins_build_nr=$BUILD_NUMBER' Packerfile.json"
             }
         }
         stage('Create Version File'){
