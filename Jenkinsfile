@@ -28,7 +28,7 @@ pipeline {
                              }
                          
                          ],
-                         "version": "$GIT_TAG"    
+                         "version": "$BUILD_NUMBER"    
                         }
                     
                     ]
