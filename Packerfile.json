@@ -1,6 +1,7 @@
 {
   "variables": {
         "jenkins_build_nr": "n/a"
+        "git_commit_hash": "n/a"
   },
 
   "builders": [
@@ -20,7 +21,7 @@
             "sleep 30",
             "echo '%sudo    ALL=(ALL)  NOPASSWD:ALL' >> /etc/sudoers", 
             "echo 'VM-Build-{{user `jenkins_build_nr`}}' > /etc/hostname",
-            "echo 'Put some instructive information here...' > /etc/motd" 
+            "echo 'This is the Dev-VM corresponding to git-hash {{user `git_commit_hash`}}' > /etc/motd" 
         ]
        }
 

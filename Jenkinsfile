@@ -2,18 +2,23 @@ pipeline {
     agent any
     stages {
         stage('Build Image'){
+
+            environment {
+                GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
+            }
+
+
             steps {
-                sh "packer build -var 'jenkins_build_nr=$BUILD_NUMBER' Packerfile.json"
+                sh "packer build -var 'jenkins_build_nr=$BUILD_NUMBER' -var 'git_commit_hash=$GIT_COMMIT_HASH' Packerfile.json"
             }
         }
         stage('Create Version File'){
+
             environment {
-                GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
                 GIT_TAG = sh(returnStdout: true, script: "git tag --sort version:refname | tail -1").trim()
                 CHECKSUM = sh(script: "awk '{print \$1}' output-vagrant/checksum.txt", returnStdout: true).trim()
             }
             steps {
-                sh "echo ${GIT_COMMIT_HASH}"
                 writeFile file: 'output-vagrant/image.json', text: """{
                     "description":"StratoPro Ordering Vagrant Box",
                     "name":"StratoPro/Centos7" ,
