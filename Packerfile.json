@@ -1,6 +1,6 @@
 {
   "variables": {
-        "jenkins_build_nr": "n/a"
+        "jenkins_build_nr": "n/a",
         "git_commit_hash": "n/a"
   },
 
