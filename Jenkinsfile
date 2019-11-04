@@ -28,7 +28,7 @@ pipeline {
             }
             steps {
                 script{
-                    updateVersionStruct('output-vagrant/image.json',"$CHECKSUM","$BUILD_NUMBER")
+                    code.updateVersionStruct('output-vagrant/image.json',"$CHECKSUM","$BUILD_NUMBER")
                 }
             }
         }
