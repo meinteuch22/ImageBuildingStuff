@@ -19,6 +19,11 @@ pipeline {
                 CHECKSUM = sh(script: "awk '{print \$1}' output-vagrant/checksum.txt", returnStdout: true).trim()
             }
             steps {
+                script{
+
+                    println("testing the script statemant...")
+
+                }
                 writeFile file: 'output-vagrant/image.json', text: """{
                     "description":"StratoPro Ordering Vagrant Box",
                     "name":"StratoPro/Centos7" ,
