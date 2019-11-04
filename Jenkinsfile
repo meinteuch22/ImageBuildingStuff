@@ -12,6 +12,11 @@ pipeline {
                 sh "packer build -var 'jenkins_build_nr=$BUILD_NUMBER' -var 'git_commit_hash=$GIT_COMMIT_HASH' Packerfile.json"
             }
         }
+        stage('Load Image Version Config'){
+        
+            code = load 'packer_image_versions.groovy'
+
+        }
         stage('Create Version File'){
 
             environment {
@@ -20,31 +25,8 @@ pipeline {
             }
             steps {
                 script{
-                    import groovy.json.JsonSlurper
-                    import groovy.json.JsonOutput
-                    println("testing the script statement...")
-
+                    updateVersionStruct('output-vagrant/image.json',"$CHECKSUM","$BUILD_NUMBER")
                 }
-                writeFile file: 'output-vagrant/image.json', text: """{
-                    "description":"StratoPro Ordering Vagrant Box",
-                    "name":"StratoPro/Centos7" ,
-                    "versions":[
-                        {
-                         "providers":[
-                             {
-                              "checksum":"$CHECKSUM",
-                              "checksum_type":"sha256",
-                              "name": "virtualbox",
-                              "url":"http://admin:119de05359ae662811d8c7963663f22bbe@vps249917.ovh.net:8080/job/FirstPipeline/lastSuccessfulBuild/artifact/output-vagrant/package.box"    
-                             }
-                         
-                         ],
-                         "version": "$BUILD_NUMBER"    
-                        }
-                    
-                    ]
-            
-                }"""
             }
         }
         stage('Archive Image'){
