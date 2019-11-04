@@ -20,8 +20,9 @@ pipeline {
             }
             steps {
                 script{
-
-                    println("testing the script statemant...")
+                    import groovy.json.JsonSlurper
+                    import groovy.json.JsonOutput
+                    println("testing the script statement...")
 
                 }
                 writeFile file: 'output-vagrant/image.json', text: """{
