@@ -12,14 +12,6 @@ pipeline {
                 sh "packer build -var 'jenkins_build_nr=$BUILD_NUMBER' -var 'git_commit_hash=$GIT_COMMIT_HASH' Packerfile.json"
             }
         }
-        stage('Load Image Version Config'){
-            steps {        
-                script{
-                    code = load 'packer_image_versions.groovy'
-                }
-            }
-
-        }
         stage('Create Version File'){
 
             environment {
@@ -28,6 +20,7 @@ pipeline {
             }
             steps {
                 script{
+                    code = load 'packer_image_versions.groovy'
                     code.updateVersionStruct('output-vagrant/image.json',"$CHECKSUM","$BUILD_NUMBER")
                 }
             }
