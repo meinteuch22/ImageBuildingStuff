@@ -13,8 +13,11 @@ pipeline {
             }
         }
         stage('Load Image Version Config'){
-        
-            code = load 'packer_image_versions.groovy'
+            steps {        
+                script{
+                    code = load 'packer_image_versions.groovy'
+                }
+            }
 
         }
         stage('Create Version File'){
