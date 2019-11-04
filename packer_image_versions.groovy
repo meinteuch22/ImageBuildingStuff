@@ -25,4 +25,6 @@ def updateVersionStruct(String filename, String checksum, String build_number){
     println(json_beauty)
 
 } 
- 
+
+
+return this 
