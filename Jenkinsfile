@@ -30,12 +30,12 @@ pipeline {
                 archiveArtifacts artifacts: 'output-vagrant/*', onlyIfSuccessful: true                
             }
         }
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()   
-            }
-        }    
             
+    }
+    post {
+        always {
+                cleanWs()   
+        }
     }
 
     
