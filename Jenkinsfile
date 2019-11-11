@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script{
                     code = load 'packer_image_versions.groovy'
-                    code.updateVersionStruct('output-vagrant/image.json',"$CHECKSUM","$BUILD_NUMBER", "$JOB_NAME")
+                    code.updateVersionStruct('output-vagrant/image.json',"$CHECKSUM","$BUILD_NUMBER", "$JOB_NAME", "$JENKINS_HOME")
                 }
             }
         }
