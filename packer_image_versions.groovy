@@ -11,7 +11,7 @@ def updateVersionStruct(String filename, String checksum, String build_number, S
     println(source)
 
     def jsonSlurper = new JsonSlurper()
-    def data = jsonSlurper.parse(new File(filename))
+    def data = jsonSlurper.parse(new File(source))
 
     def new_version = [:]
 
