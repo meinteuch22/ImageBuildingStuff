@@ -1,5 +1,6 @@
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
+
    
   
 def updateVersionStruct(String filename, String checksum, String build_number, String jobname, String jenkins_home){
