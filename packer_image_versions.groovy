@@ -8,6 +8,8 @@ def updateVersionStruct(String filename, String checksum, String build_number, S
     def source = jenkins_home + "/jobs/" + jobname + "/builds/" + buildNumber + "/archive/" + filename 
     def target = filename 
 
+    println(source)
+
     def jsonSlurper = new JsonSlurper()
     def data = jsonSlurper.parse(new File(filename))
 
