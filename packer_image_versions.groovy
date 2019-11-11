@@ -2,7 +2,9 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
    
   
-def updateVersionStruct(String filename, String checksum, String build_number){
+def updateVersionStruct(String filename, String checksum, String build_number, String jobname){
+
+    def buildNumber = Jenkins.instance.getItem(jobname).lastSuccessfulBuild.number
 
     def jsonSlurper = new JsonSlurper()
     def data = jsonSlurper.parse(new File(filename))
