@@ -24,6 +24,11 @@ def updateVersionStruct(String filename, String checksum, String build_number, S
     data.versions.push(new_version)
 
     def json_str = JsonOutput.toJson(data)
+
+    
+    println("String is ...")
+    println(json_str)
+
     def json_beauty = JsonOutput.prettyPrint(json_str)
 
     File file = new File(target)
