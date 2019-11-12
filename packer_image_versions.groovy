@@ -17,7 +17,7 @@ def updateVersionStruct(String filename, String checksum, String build_number, S
     def new_version = [:]
 
     new_version["providers"]=[]
-    new_version["providers"].add(["checksum":checksum,"checksum_type":"sha256","name":"virtualbox","url":"http://admin:119de05359ae662811d8c7963663f22bbe@vps249917.ovh.net:8080/job/FirstPipeline/lastSuccessfulBuild/artifact/output-vagrant/package.box"])
+    new_version["providers"].add(["checksum":checksum,"checksum_type":"sha256","name":"virtualbox","url":"http://admin:11f9d3c607021a92eeb0236e25f9ffb75b@vps249917.ovh.net:8080/job/" + jobname + "/" + build_number + "/artifact/output-vagrant/package.box"])
 
     new_version["version"] = build_number 
 

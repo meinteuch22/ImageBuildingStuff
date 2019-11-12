@@ -23,7 +23,12 @@
             "echo 'VM-Build-{{user `jenkins_build_nr`}}' > /etc/hostname",
             "echo 'This is the Dev-VM corresponding to git-hash {{user `git_commit_hash`}}' > /etc/motd" 
         ]
+       },
+       {
+        "type": "ansible",
+        "playbook_file": "./playbooks/DeveloperVM_Image_Prov.yml"
        }
+
 
 
   ],

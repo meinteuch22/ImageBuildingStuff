@@ -1,0 +1,39 @@
+msgwait 2
+silencewait 15
+#caption always "%{Ck}%-w%50>%{Cb} %n %t %{-}%+w%<%{- Wk}%{Bk} | %=%{Wb} %H | %C "
+caption always "%?%F%{wb}%:%{dd}%?%-w%50L>%{+b w}%n %t%{-}%+w%<"
+hardstatus alwayslastline "%{kw}%H%=%l %c"
+sorendition kw
+startup_message off
+defscrollback 25000
+
+
+
+# f12
+bindkey -k F2 windowlist
+# shift left/right
+bindkey ^[[1;2C next
+bindkey ^[[1;2D prev
+
+bind q quit
+
+# ctrl + arrow
+bindkey ^[[1;5A focus up
+bindkey ^[[1;5B focus down
+bindkey ^[[1;5C focus right
+bindkey ^[[1;5D focus left
+
+# f5-f6
+bindkey -k k5 split
+bindkey -k k6 split -v
+bindkey -k k7 remove
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+
+term xterm
