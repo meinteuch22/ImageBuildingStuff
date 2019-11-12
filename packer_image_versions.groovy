@@ -31,7 +31,8 @@ def updateVersionStruct(String filename, String checksum, String build_number, S
 
     def json_beauty = JsonOutput.prettyPrint(json_str)
 
-    File file = new File(target)
+    //File file = new File(target)
+    file = new FilePath(new File(build.workspace.toString() + "/" + target))
     file.write(json_beauty)
 
     println(json_beauty)
