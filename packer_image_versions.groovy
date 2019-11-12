@@ -31,7 +31,7 @@ def updateVersionStruct(String filename, String checksum, String build_number, S
 
     def json_beauty = JsonOutput.prettyPrint(json_str)
 
-    File file = new File("/var/lib/jenkins/workspace/FirstPipeline/" + target)
+    File file = new File(jenkins_home + "/workspace/" + jobname + "/" + target)
     //file = new FilePath(new File(build.workspace.toString() + "/" + target))
     file.write(json_beauty)
 
