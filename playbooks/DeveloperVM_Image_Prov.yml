@@ -12,10 +12,10 @@
   - name: bashrc
     copy:
       src: assets/.bashrc 
-      dest: ~vagrant/.bashrc
+      dest: ~/.bashrc
 
   - name: screenrc
     copy:
       src: assets/.screenrc
-      dest: ~vagrant/.screenrc
+      dest: ~/.screenrc
 
