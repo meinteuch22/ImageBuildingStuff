@@ -1,6 +1,10 @@
 ---
 - hosts: all
 
+  roles:
+   - role: geerlingguy.mysql
+     become: yes
+
   tasks:
 
   - name: install screen
@@ -18,8 +22,3 @@
     copy:
       src: assets/.screenrc
       dest: ~/.screenrc
-
-  - name: mysql installation
-    roles:
-     - { role: geerlingguy.mysql }
-    become: yes
