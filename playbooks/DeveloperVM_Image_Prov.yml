@@ -19,3 +19,7 @@
       src: assets/.screenrc
       dest: ~/.screenrc
 
+  - name: mysql installation
+    roles:
+     - { role: geerlingguy.mysql }
+    become: yes
