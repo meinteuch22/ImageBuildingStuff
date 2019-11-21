@@ -1,3 +1,4 @@
 ---
--src: manala.vim
--src: geerlingguy.mysql 
+collections:
+-manala.vim
+-geerlingguy.mysql 
