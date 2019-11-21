@@ -27,7 +27,8 @@
        {
         "type": "ansible",
         "playbook_file": "./playbooks/DeveloperVM_Image_Prov.yml",
-        "galaxy_file": "./playbooks/requirements.yml"
+        "galaxy_file": "./playbooks/requirements.yml",
+        "galaxy_command":"ansible-galaxy"
        }
 
 
