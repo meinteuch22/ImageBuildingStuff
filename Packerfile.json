@@ -31,8 +31,8 @@
        {
         "type": "ansible",
         "playbook_file": "./playbooks/DeveloperVM_Image_Prov.yml",
-        "galaxy_file": "./playbooks/roles/requirements.yml",
-        "galaxy_command": "ansible-galaxy install --roles-path ./playbooks/roles "
+        "galaxy_file": "/var/lib/jenkins/workspace/FirstPipeline/playbooks/roles/requirements.yml",
+        "galaxy_command": "ansible-galaxy install --roles-path /var/lib/jenkins/workspace/FirstPipeline/playbooks/roles "
        }
 
 
