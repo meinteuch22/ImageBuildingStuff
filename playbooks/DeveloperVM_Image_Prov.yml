@@ -3,9 +3,9 @@
 
   roles:
   - role: geerlingguy.mysql
-     become: yes
+    become: yes
   - role: manala.vim 
-     become: yes
+    become: yes
 
   tasks:
 
