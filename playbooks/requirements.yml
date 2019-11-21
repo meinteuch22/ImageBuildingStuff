@@ -1,5 +1,4 @@
 ---
-
 collections:
  - manala.vim
- - geerlingguy.mysql 
+ - geerlingguy.mysql
