@@ -7,6 +7,18 @@
 
   tasks:
 
+  - name: install gcc 
+    package:
+      name: gcc 
+      state: present
+    become: yes
+
+  - name: install vim 
+    package:
+      name: vim 
+      state: present
+    become: yes
+
   - name: install screen
     package:
       name: screen
