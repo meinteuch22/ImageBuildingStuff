@@ -13,6 +13,30 @@
       state: present
     become: yes
 
+  - name: install libxml 
+    package:
+      name: libxml2.x86_64 
+      state: present
+    become: yes
+
+  - name: install libxml-devel 
+    package:
+      name: libxml2-devel.x86_64 
+      state: present
+    become: yes
+
+  - name: install libxslt
+    package:
+      name: libxslt.x86_64 
+      state: present
+    become: yes
+
+  - name: install libxslt-devel 
+    package:
+      name: libxslt-devel.x86_64 
+      state: present
+    become: yes
+
   - name: install vim 
     package:
       name: vim 
