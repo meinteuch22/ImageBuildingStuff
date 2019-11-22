@@ -1,4 +1,3 @@
 ---
-collections:
- - manala.vim
- - geerlingguy.mysql
+- src: geerlingguy.mysql
+- src: manala.vim 
