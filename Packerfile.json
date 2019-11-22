@@ -26,11 +26,10 @@
        },
        {
         "type": "shell-local",
-        "command": "ansible-galaxy install -vvv --roles-path ./playbooks/roles -r ./playbooks/requirements.yml"
+        "command": "ansible-galaxy install -v --roles-path ./playbooks/roles -r ./playbooks/requirements.yml"
        },
        {
         "type": "ansible",
-        "extra_arguments": ["-vvv"],
         "playbook_file": "./playbooks/DeveloperVM_Image_Prov.yml"
        }
 
