@@ -48,13 +48,3 @@
       name: screen
       state: present
     become: yes
-
-  - name: bashrc
-    copy:
-      src: assets/.bashrc 
-      dest: ~/.bashrc
-
-  - name: screenrc
-    copy:
-      src: assets/.screenrc
-      dest: ~/.screenrc
